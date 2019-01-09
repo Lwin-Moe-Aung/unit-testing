@@ -6,13 +6,15 @@ use PHPUnit\Framework\TestCase;
 use App\Models\User;
 class UserTest extends TestCase
 {
-	protected $user;
 
+	protected $user;
+	
 	public function setUp() 
 	{
         $this->user = new User;
     }
 
+    /** @test */
 	public function testThatweCanGetTheName()
 	{
 
@@ -20,6 +22,7 @@ class UserTest extends TestCase
 
 		$this->assertEquals($this->user->getName(),'lwin Moe Aung');
 	}
+	/** @test */
 
 	public function testThatweCanGetTheEmail()
 	{
@@ -28,7 +31,7 @@ class UserTest extends TestCase
 		
 		$this->assertEquals($this->user->getEmail(),'lwinmoeaung@gmail.com');
 	}
-
+	/** @test */
 	public function testEmailVariablesContainCorrectValues()
 	{
 		$this->user->setName('lwin Moe Aung');
